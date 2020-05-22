@@ -1,0 +1,172 @@
+\documentclass{amsart}
+
+\usepackage{babel}
+\usepackage{textcomp}
+\usepackage{mathrsfs}
+\usepackage{url}
+\usepackage{amstext}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+\usepackage{agt}
+
+\begin{document}
+
+%===============================================================================
+%   Front matter --- title, etc.
+%===============================================================================
+
+\author{Victor Porton}
+\email{porton@narod.ru}
+\address{Shay Agnon 32-29, Ashkelon, Israel}
+
+\title[Algebraic General Topology]{Algebraic General Topology summary}
+
+\maketitle
+
+%===============================================================================
+%   Text of the theses
+%===============================================================================
+
+In my book~\cite{PortonVolume1} I introduce some new concepts
+generalizing general topology, including \emph{funcoids} and \emph{reloids}.
+The book along with supplementary materials (such as a partial draft of the second volume)
+is freely available (including the \LaTeX\ source) online.
+
+Before studying funcoids, in my book I consider
+co-brouwerian lattices and lattices of filters in particular,
+as the theory of funcoids is based on theory of filters.
+My book contains probably the best (and most detailed) published overview of properties of filters.
+
+Because you always can refer to my book, in this short intro I present theorems without proofs.
+
+I denote order on a poset as~$\sqsubseteq$ and corresponding lattice operations as~$\bigsqcup$ and~$\bigsqcap$.
+I denote the least and greatest elements (if they exist) of our poset as~$\bot$ and~$\top$ correspondingly.
+
+\section{Filters}
+
+\begin{defn}
+I order the set~$\mathfrak{F}$ of filters (including the improper filter) \emph{reverse} to set-theoretic order, that is
+$\mathcal{A} \sqsubseteq \mathcal{B} \Leftrightarrow \mathcal{A} \supseteq \mathcal{B}$
+for $\mathcal{A},\mathcal{B}\in\mathfrak{F}$.
+\end{defn}
+
+\begin{prop}
+This makes the set of filters on a set into a co-brouwerian (and thus distributive) lattice, that is we have
+$\mathcal{A} \sqcup \bigsqcap S = \bigsqcap_{\mathcal{X}\in S} (\mathcal{A} \sqcup \mathcal{X})$
+for a set~$S$ of filters and a filter~$\mathcal{A}$.
+\end{prop}
+
+\section{Funcoids}
+
+Let $\mathfrak{F}(A)$, $\mathfrak{F}(B)$ be sets of filters on sets~$A$,~$B$.
+They are complete atomistic co-brouwerian lattices.
+
+\begin{defn}
+A \emph{funcoid} $A\rightarrow B$ is a quadruple $(A,B,\alpha,\beta)$
+where~$\alpha$ and~$\beta$ are functions $\mathfrak{F}(A)\rightarrow \mathfrak{F}(B)$
+and $\mathfrak{F}(B)\rightarrow \mathfrak{F}(A)$ correspondingly, such that
+$\mathcal{Y} \sqcap \alpha(\mathcal{X}) \ne \bot \Leftrightarrow \mathcal{X} \sqcap \beta(\mathcal{Y}) \ne \bot$
+for every $\mathcal{X}\in\mathfrak{F}(A)$, $\mathcal{Y}\in\mathfrak{F}(B)$.
+\end{defn}
+
+\begin{defn}
+I denote $(A,B,\alpha,\beta)^{-1} = (B,A,\beta,\alpha)$.
+\end{defn}
+
+\begin{defn}
+I denote $\langle(A,B,\alpha,\beta)\rangle = \alpha$.
+\end{defn}
+
+Funcoids generalize such things as:
+\begin{itemize}
+\item binary relations;
+\item proximity spaces;
+\item pretopologies;
+\item preclosures.
+\end{itemize}
+
+For a proximity~$\delta$, define
+\[ \mathcal{X}\mathrel{\delta'}\mathcal{Y} \Leftrightarrow \forall X\in\mathcal{X},Y\in\mathcal{Y}: X\mathrel{\delta}Y \]
+for all filters~$\mathcal{X}$,~$\mathcal{Y}$.
+Then we have a unique funcoid~$f$ such that
+\[
+\mathcal{X}\mathrel{\delta'}\mathcal{Y} \Leftrightarrow
+\mathcal{Y}\sqcap\langle f\rangle\mathcal{X} \ne \bot \Leftrightarrow
+\mathcal{X}\sqcap\langle f^{-1}\rangle\mathcal{Y} \ne \bot.
+\]
+
+\begin{defn}
+$\mathcal{X} \mathrel{[f]} \mathcal{Y} \Leftrightarrow \mathcal{Y}\sqcap\langle f\rangle\mathcal{X} \ne \bot \Leftrightarrow
+\mathcal{X}\sqcap\langle f^{-1}\rangle\mathcal{Y} \ne \bot$.
+\end{defn}
+
+\begin{prop}
+A funcoid~$f: A\rightarrow B$ is uniquely determined by $\langle f\rangle$ and moreover is uniquely
+determined by values of the function~$\langle f\rangle$ on principal filters or
+by the relation~$[f]$ between principal filters.
+\end{prop}
+
+See my book for formulas for \emph{principal funcoids} that is funcoids corresponding to binary relations
+and for funcoids corresponding to pretopologies and preclosures (particularly funcoids corresponding to
+topological spaces, as topological spaces can be considered as a special case of either pretopologies or preclosures).
+
+There are also several other equivalent ways to define funcoids.
+
+Funcoids are made more interesting than topological spaces by a new operation (missing in traditional general topology),
+\emph{composition}, which is defined by the formula
+\[ (B,C,\alpha_2,\beta_2)\circ (A,B,\alpha_1,\beta_1) = (A,C,\alpha_2\circ\alpha_1,\beta_1\circ\beta_2). \]
+
+\section{Reloids}
+
+Reloids are basically just filters on cartesian product~$A\times B$ of two given sets~$A$ and~$B$.
+
+Formally:
+
+\begin{defn}
+A \emph{reloid} is a triple $(A,B,F)$ where $A$,~$B$ are sets and $F$ is a filter on~$A\times B$.
+\end{defn}
+
+Reloids are a generalization of uniform spaces and of binary relations.
+
+\begin{defn}
+Composition $g\circ f$ of reloids can be easily defined as the reloid determined by the filter base
+consisting of compositions of binary relations defining these reloids (see the book for an exact formula).
+\end{defn}
+
+\begin{prop}
+Composition of reloids (and of funcoids) is associative.
+\end{prop}
+
+The sets of funcoids and reloids constitute complete atomistic co-brouwerian lattices and these lattices have interesting
+properties.
+
+There are interesting relationships between funcoids and reloids, as well as special classes of funcoids and reloids.
+
+\section{Continuity}
+
+A function~$f$ from a space~$\mu$ to a space~$\nu$ is \emph{continuous} iff
+$f\circ\mu\sqsubseteq \nu\circ f$. This formula works for continuity, proximal continuity,
+uniform continuity, etc., so making all kinds of continuity described by the same formula.
+
+\section{Other}
+
+My book~\cite{PortonVolume1} also considers pointfree generalizations of funcoids,
+multidimensional generalizations of funcoids and reloids and other research topics.
+
+I also introduce generalized limit for arbitrary (not necessarily continuous) functions.
+
+My work introduced \emph{many} new conjectures. So I give you a work.
+
+%===============================================================================
+%   Bibliography
+%===============================================================================
+
+\begin{thebibliography}{9}
+	\bibitem{PortonVolume1}
+	Victor Porton.
+	Algebraic General Topology. Volume~1. \\
+	\url{http://www.mathematics21.org/algebraic-general-topology.html}
+\end{thebibliography}
+
+\end{document}
