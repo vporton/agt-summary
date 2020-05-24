@@ -155,6 +155,78 @@ equivalent to the following two other formulas:
 \[ \mu\sqsubseteq f^{-1}\circ\nu\circ f;\quad
 f\circ\mu\circ f^{-1}\sqsubseteq \nu. \]
 
+\section{Spaces as elements of ordered semigroup actions}
+
+\begin{defn}
+\emph{Ordered semigroup} (or \emph{posemigroup}) is a set together with binary operation~$\circ$ and binary relation~$\leq$ on it, conforming both to semigroup axioms and partial order axioms and:
+\[ x_0\leq x_1\land y_0\leq y_1\Rightarrow y_0\circ x_0\leq y_1\circ x_1. \]
+\end{defn}
+
+\begin{defn}
+\emph{Ordered precategory} (or \emph{poprecategory}) is
+a precategory together with an order on the set of morphisms conforming to the equality:
+\[ x_0\leq x_1\land y_0\leq y_1\Rightarrow y_0\circ x_0\leq y_1\circ x_1. \]
+\end{defn}
+
+\begin{defn}
+\emph{Semiordered precategory action} on~$\mathfrak{A}$ is a precategory action~$\supfun{}$ to the category~$\mathbf{Pos}$ of all partially ordered sets, such that
+\begin{enumerate}
+\item $a\leq b\Rightarrow\supfun{a}x\leq \supfun{b}x$ for all $a,b\in S$, $x\in\mathfrak{A}$.
+\end{enumerate}
+I call morphisms of such a precategory as \emph{semi-interspaces}.\footnote{The prefix inter- is supposed to mean that the morphisms may have the source different that the destination.}
+\end{defn}
+
+\begin{defn}
+\emph{Ordered precategory action} on~$\mathfrak{A}$ is a precategory action~$\supfun{}$ to the category~$\mathbf{Pos}$ of all partially ordered sets, such that
+\begin{enumerate}
+\item $a\leq b\Rightarrow\supfun{a}x\leq \supfun{b}x$ for all $a,b\in S$, $x\in\mathfrak{A}$;
+\item $x\leq y\Rightarrow\supfun{a}x\leq \supfun{a}y$ for all $a\in S$, $x,y\in\mathfrak{A}$.
+\end{enumerate}
+In other words, an ordered precategory action is a (not necessarily strictly) increasing precategory action (we consider transformations of this action to be ordered pointwise, that is by the product order).
+
+I call morphisms of such a precategory as \emph{interspaces}.
+\end{defn}
+
+\begin{defn}
+\emph{Curried semiordered semigroup action} on a poset~$\mathfrak{A}$ for an ordered semigroup~$S$ is a function $\supfun{}:S\to(\mathfrak{A}\to\mathfrak{A})$ such that
+\begin{enumerate}
+\item $\supfun{b\circ a}x = \supfun{b}\supfun{a}x$ for all $a,b\in S$, $x\in\mathfrak{A}$;
+$x,y\in\mathfrak{A}$;
+\item $a\leq b\Rightarrow\supfun{a}x\leq \supfun{b}x$ for all $a,b\in S$, $x\in\mathfrak{A}$.
+\end{enumerate}
+I call elements of such an action (that is elements of the corresponding semigroup) \emph{semispaces}.
+\end{defn}
+
+\begin{defn}
+\emph{Curried ordered semigroup action} on a poset~$\mathfrak{A}$ for an ordered semigroup~$S$ is a function $\supfun{}:S\to(\mathfrak{A}\to\mathfrak{A})$ such that
+\begin{enumerate}
+\item $\supfun{b\circ a}x = \supfun{b}\supfun{a}x$ for all $a,b\in S$, $x\in\mathfrak{A}$;
+$x,y\in\mathfrak{A}$;
+\item $a\leq b\Rightarrow\supfun{a}x\leq \supfun{b}x$ for all $a,b\in S$, $x\in\mathfrak{A}$;
+\item $x\leq y\Rightarrow\supfun{a}x\leq \supfun{a}y$ for all $a\in S$.
+\end{enumerate}
+I call elements of such an action \emph{spaces}. (By an element of an action I mean an element of the corresponding semigroup.)
+\end{defn}
+
+\begin{rem}
+Google search for both ``"ordered semigroup action"'' and ``"action of ordered semigroup"'' and ``"action of an ordered semigroup"'' showed nothing. Was a spell laid onto Earth mathematicians not to find the most important structure in general topology?
+\end{rem}
+
+Essentially, an ordered semigroup action is an ordered precategory action with just one object.
+
+The interesting thing here is that every kind of a space
+(topological space, uniforms space or reloid, proximity space
+of funcoid, metric space) is representable as an element of
+an ordered semigroup action. Both spaces and binary relations
+(including functions) are interspaces.
+
+All topological properties can be described in terms of
+ordered actions of semigroups or more generally ordered actions of precategories.
+
+So, it appears that general topology is nothing other as the
+theory of these generalized spaces and interspaces, that is
+ordered actions of semigroups or more generally ordered actions of precategories.
+
 \section{Generalized limit}
 
 \subsection{A popular explanation of generalized limit}
