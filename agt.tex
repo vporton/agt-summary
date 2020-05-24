@@ -75,7 +75,7 @@ $\mathcal{A} \sqcup \bigsqcap S = \bigsqcap_{\mathcal{X}\in S} (\mathcal{A} \sqc
 for a set~$S$ of filters and a filter~$\mathcal{A}$.
 \end{prop}
 
-We denote $\uparrow A$ the pricnipal filter corresponding to a set~$A$ that is the filter $\setcond{X\in\subsets\mho}{X\supseteq A}$.
+We denote $\uparrow A$ the principal filter corresponding to a set~$A$ that is the filter $\setcond{X\in\subsets\mho}{X\supseteq A}$.
 
 \section{Funcoids}
 
@@ -141,7 +141,7 @@ Funcoids are made more interesting than topological spaces by a new operation (m
 $\mathcal{X}\suprel{f}\mathcal{Y} \Leftrightarrow \mathcal{Y}\nasymp\supfun{f}\mathcal{X}$.
 \end{defn}
 
-We can define the funcoid~$\uparrow f$ corresponding to a binary relation~$f$ by the formula $\supfun{\uparrow f}\uparrow X=\uparrow\rsupfun{f}X$ for every set~$X$ on its source. (It can be proved that for every~$f$ there exists a unique~$\uparrow f$.) We call funcoids corresponding in this way to binary relations \emph{principal funcoids}.
+We can define the funcoid~$\uparrow^{\mathsf{FCD}} f$ corresponding to a binary relation~$f$ by the formula $\supfun{\uparrow^{\mathsf{FCD}} f}\uparrow X=\uparrow\rsupfun{f}X$ for every set~$X$ on its source. (It can be proved that for every~$f$ there exists a unique~$\uparrow^{\mathsf{FCD}} f$.) We call funcoids corresponding in this way to binary relations \emph{principal funcoids}.
 
 \begin{defn}
 A funcoid~$f$ is \emph{co-complete} when $\supfun{f}X$ is principal for every principal filter~$X$.
@@ -165,6 +165,7 @@ f\bigsqcup S=\bigsqcup\rsupfun{\rsupfun f}S$;
 fA=\bigsqcup_{a\in\atoms A}\rsupfun fa$.
 \end{enumerate}
 
+The closure operation of a topological space corresponds to a co-complete funcoid. So topological spaces are a special case of funcoids. The theory of topological spaces can be reformulated in terms of funcoids.
 
 \section{Reloids}
 
@@ -225,9 +226,6 @@ and
 \]
 
 \section{Relationships between funcoids and reloids}
-
-\fxwarning{Define $\uparrow^{\mathsf{FCD}}$.
-(It is defined but $\mathsf{FCD}$ is forgotten.)}
 
 \index{funcoid!induced by reloid}Every reloid $f$ induces a funcoid
 $\tofcd f\in\mathsf{FCD}(\Src f,\Dst f)$ by the following formulas
