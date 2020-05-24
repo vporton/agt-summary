@@ -55,9 +55,11 @@ I will denote $\atoms a$ the set of atoms under an element~$a$ of a poset.
 
 \section{Filters}
 
-We will consider \emph{filters} on a set~$\mho$ that is sets~$\mathfrak{F}$ of subsets of~$\mho$ such that
+We will consider \emph{filters} on a set~$\mho$ (denote $\mathfrak{F}(\mho)$) that is sets~$\mathcal{F}$ of subsets of~$\mho$ such that
 \[ \forall X,Y\in\subsets\mho:
 (X,Y\in\mathcal{F} \Leftrightarrow X\cap Y\in\mathcal{F}). \]
+
+I will denote $\Base(\mathcal{F})=\mho$.
 
 Filters are a generalization of sets, allowing to express such things as the infinitely small neighbourhood of zero on the real line: $\setcond{X\in\subsets\mathbb{R}}{\exists\epsilon>0:X\supseteq\left]\epsilon;\epsilon\right[}$.
 
@@ -191,6 +193,31 @@ properties.
 There are interesting relationships between funcoids and reloids, as well as special classes of funcoids and reloids.
 
 \section{Products of filters}
+
+A generalization of Cartesian product of two sets is funcoidal product
+of two filters:
+\begin{defn}
+\index{product!funcoidal}\emph{Funcoidal product} of filters $\mathcal{A}$
+and $\mathcal{B}$ is such a funcoid
+$\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}\in\mathsf{FCD}(\Base(\mathcal{A}
+),\Base(\mathcal{B}))$
+that for every $\mathcal{X}\in\Base(\mathcal{A})$,
+$\mathcal{Y}\in\Base(\mathcal{B})$
+\[
+\mathcal{X}\suprel{\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}}\mathcal{Y}
+\Leftrightarrow\mathcal{X}\nasymp\mathcal{A}\land\mathcal{Y}\nasymp\mathcal{B}.
+\]
+\end{defn}
+\begin{prop}
+$\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}$ is really a funcoid
+and
+\[
+\supfun{\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}}\mathcal{X}=\begin{cases}
+\mathcal{B} & \text{if }\mathcal{X}\nasymp\mathcal{A}\\
+\bot^{\mathfrak{F}(\Base(\mathcal{B}))} & \text{if }\mathcal{X}\asymp\mathcal{A}.
+\end{cases}
+\]
+\end{prop}
 
 \section{Relationships between funcoids and reloids}
 
