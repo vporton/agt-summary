@@ -21,7 +21,7 @@
 
 \maketitle
 
-In my book~\cite{volume-1-edition1} I introduce some new concepts
+In my book~\cite{volume-1-edition1} published by INFRA-M (with almost no artiles interim) I introduce some new concepts
 generalizing general topology, including \emph{funcoids} and \emph{reloids}.
 The book along with supplementary materials (such as a partial draft of the second volume)
 is freely available (including the \LaTeX\ source) online.
@@ -61,7 +61,7 @@ We will consider \emph{filters} on a set~$\mho$ (denote $\mathfrak{F}(\mho)$) th
 
 I will denote $\Base(\mathcal{F})=\mho$.
 
-Filters are a generalization of sets, allowing to express such things as the infinitely small neighbourhood of zero on the real line: $\setcond{X\in\subsets\mathbb{R}}{\exists\epsilon>0:X\supseteq\left]\epsilon;\epsilon\right[}$.
+Filters are a generalization of sets, allowing to express such things as the infinitely small neighbourhood of zero on the real line: \[ \setcond{X\in\subsets\mathbb{R}}{\exists\epsilon>0:X\supseteq\left]\epsilon;\epsilon\right[}. \]
 
 \begin{defn}
 I order the set~$\mathfrak{F}$ of filters (including the improper filter) \emph{reverse} to set-theoretic order, that is
@@ -77,10 +77,9 @@ for a set~$S$ of filters and a filter~$\mathcal{A}$.
 
 We denote $\uparrow A$ the principal filter corresponding to a set~$A$ that is the filter $\setcond{X\in\subsets\mho}{X\supseteq A}$.
 
-\section{Funcoids}
+Note that the set of principal filters is a subset of the set of filters on some set. This suggests the idea of filtrators: A \emph{filtrator} is a pair of a poset and its subset. Filtrators were first studied by me in~\cite{filters} and \cite{volume-1-edition1} contains a more detailed reference on filtrators.
 
-Let $\mathfrak{F}(A)$, $\mathfrak{F}(B)$ be sets of filters on sets~$A$,~$B$.
-They are complete atomistic co-brouwerian lattices.
+\section{Funcoids}
 
 \begin{defn}
 A \emph{funcoid} $A\rightarrow B$ is a quadruple $(A,B,\alpha,\beta)$
@@ -169,7 +168,7 @@ The closure operation of a topological space corresponds to a co-complete funcoi
 
 \section{Reloids}
 
-Reloids are basically just filters on cartesian product~$A\times B$ of two given sets~$A$ and~$B$.
+Reloids are basically just filters on cartesian product~$A\times B$ of two given sets~$A$ and~$B$. (So uniform spaces are a special case of reloids.)
 
 Formally:
 
@@ -254,7 +253,11 @@ equivalent to the following two other formulas:
 \[ \mu\sqsubseteq f^{-1}\circ\nu\circ f;\quad
 f\circ\mu\circ f^{-1}\sqsubseteq \nu. \]
 
+For the general case of arbitrary funcoids or reloids these three formulas produce three different definitions of continuity.
+
 \section{Spaces as elements of ordered semigroup actions}
+
+From~\cite{volume-3}:
 
 \begin{defn}
 \emph{Ordered semigroup} (or \emph{posemigroup}) is a set together with binary operation~$\circ$ and binary relation~$\leq$ on it, conforming both to semigroup axioms and partial order axioms and:
@@ -308,7 +311,7 @@ I call elements of such an action \emph{spaces}. (By an element of an action I m
 \end{defn}
 
 \begin{rem}
-Google search for both ``"ordered semigroup action"'' and ``"action of ordered semigroup"'' and ``"action of an ordered semigroup"'' showed nothing. Was a spell laid onto Earth mathematicians not to find the most important structure in general topology?
+Google search for both ``ordered semigroup action'' and ``action of ordered semigroup'' and ``action of an ordered semigroup'' showed nothing. Was a spell laid onto Earth mathematicians not to find the most important structure in general topology?
 \end{rem}
 
 Essentially, an ordered semigroup action is an ordered precategory action with just one object.
@@ -429,9 +432,6 @@ And it works not only for real numbers. It would work for example for any functi
 Hurrah! Now we can define derivative and integral of \emph{every} function.
 
 \subsection{Formal}
-
-\fxwarning{The definition with or without~$\uparrow$?}
-\fxwarning{``Vertical'' set definitions.}
 
 In~\cite{volume-1-edition1} first defined generalized limit of
 a funcoid~$f$ to space~$\nu$ from a group~$G$ of ``translations'':
