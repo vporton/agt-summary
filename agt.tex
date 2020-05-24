@@ -8,6 +8,8 @@
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{stmaryrd}
+\usepackage{float}
+\usepackage{pgfplots}
 \usepackage{agt}
 
 \begin{document}
@@ -29,7 +31,7 @@ co-brouwerian lattices and lattices of filters in particular,
 as the theory of funcoids is based on theory of filters.
 My book contains probably the best (and most detailed) published overview of properties of filters.
 
-Then I discovered~(\cite{volume-3}) that funcoids and reloids as well as all
+Later I discovered~(\cite{volume-3}) that funcoids and reloids as well as all
 kinds of spaces in general topology are a special case of
 elements of ordered semigroup actions\footnote{Ordered semigroup actions are first time researched by myself.}. Ordered semigroup actions are a special case of ordered precategory actions, which encompass all things of general topology.
 
@@ -148,12 +150,170 @@ A function~$f$ from a space~$\mu$ to a space~$\nu$ is \emph{continuous} iff
 $f\circ\mu\sqsubseteq \nu\circ f$. This formula works for continuity, proximal continuity,
 uniform continuity, etc., so making all kinds of continuity described by the same formula.
 
+If~$f$ is a principal funcoid or reloid correspondign to a monovalued entirely defined function, then this formula is
+equivalent to the following two other formulas:
+\[ \mu\sqsubseteq f^{-1}\circ\nu\circ f;\quad
+f\circ\mu\circ f^{-1}\sqsubseteq \nu. \]
+
+\section{Generalized limit}
+
+\subsection{A popular explanation of generalized limit}
+
+For an example, consider some real function~$f$ from $x$-axis to $y$-axis:
+\begin{figure}[H]
+\begin{tikzpicture}
+\begin{axis}[grid=both,
+          xmax=2,ymax=7,
+          axis lines=middle,
+          restrict y to domain=-7:7,
+          enlargelimits]
+\addplot[domain=-5:5,samples=100]{pow(2,-10*x^2)+x^3};
+\end{axis}
+\end{tikzpicture}
+\end{figure}
+ 
+Take it's infinitely small fragment (in our example, an infinitely small interval for~$x$ around zero):
+\begin{figure}[H]
+\begin{tikzpicture}
+\begin{axis}[grid=both,
+          xmax=2,ymax=7,
+          axis lines=middle,
+          restrict y to domain=-7:7,
+          enlargelimits]
+\addplot[domain=-0.2:0.2,samples=100]{pow(2,-10*x^2)+x^3};
+\end{axis}
+\end{tikzpicture}
+\end{figure}
+
+Next consider that with a value~$y$ replaced with an infinitely small interval like $[y-\epsilon;y+\epsilon]$:
+\begin{figure}[H]
+\begin{tikzpicture}
+\begin{axis}[grid=both,
+          xmax=2,ymax=7,
+          axis lines=middle,
+          restrict y to domain=-7:7,
+          enlargelimits]
+\addplot[domain=-0.2:0.2,samples=100,
+          line width=5pt]{pow(2,-10*x^2)+x^3};
+\end{axis}
+\end{tikzpicture}
+\end{figure}
+
+Now we have ``an infinitely thin and short strip''. In fact, it is the same as an ``infinitely small rectangle'' (Why? So infinitely small behave, it can be counter-intuitive, but if we consider the above meditations formally, we could get this result):
+\begin{figure}[H]
+\begin{tikzpicture}
+\begin{axis}[grid=both,
+          xmax=2,ymax=7,
+          axis lines=middle,
+          restrict y to domain=-7:7,
+          enlargelimits]
+\addplot[domain=-0.2:0.2,samples=100,
+          line width=5pt]{pow(2,-10)+1};
+\end{axis}
+\end{tikzpicture}
+\end{figure}
+
+This infinitely small rectangle's $y$~position uniquely characterizes the limit of our function (in our example at~$x\to 0$).
+
+If we consider the set of all rectangles we obtain by shifting this rectangle by adding an arbitrary number to~$x$, we get
+\begin{figure}[H]
+\begin{tikzpicture}
+\begin{axis}[grid=both,
+          xmax=2,ymax=7,
+          axis lines=middle,
+          restrict y to domain=-7:7,
+          enlargelimits]
+\addplot[domain=-0.2:0.2,samples=100,
+          line width=5pt]{pow(2,-10)+1};
+\addplot[domain=0.5:0.9,samples=100,
+          line width=5pt]{pow(2,-10)+1};
+\addplot[domain=1.3:1.7,samples=100,
+          line width=5pt]{pow(2,-10)+1};
+\addplot[domain=2.0:2.4,samples=100,
+          line width=5pt]{pow(2,-10)+1};
+\addplot[domain=2.7:3.1,samples=100,
+          line width=5pt]{pow(2,-10)+1};
+\addplot[domain=3.4:3.8,samples=100,
+          line width=5pt]{pow(2,-10)+1};
+\end{axis}
+\end{tikzpicture}
+\end{figure}
+Such sets one-to-one corresponds to the value of the limit of our function (at $x\to 0$): Knowing such the set, we can calculate the limit (take its arbitrary element and get its so to say $y$-limit point) and knowing the limit value~($y$), we could write down the definition of this set.
+
+So we have a formula for \emph{generalized limit}:
+\[ \lim_{x\to a} f(x) =
+\{ \nu \circ f|_{\Delta(a)} \circ r \mid r\in G \} \]
+where~$G$ is the group of all horizontal shifts of our space~$\mathbb{R}$, $f|_{\Delta(a)}$ is the function~$f$ of which we are taking limit restricted to the infinitely small interval~$\Delta(a)$ around the point~$a$, $\nu\circ{}$~is ``stretching'' our function graph into the infinitely thin ``strip'' by applying a topological operation to it.
+
+What all this (especially ``infinitely small'') means? It is filters and ``funcoids''.
+
+Why we consider all shifts of our infinitely small rectangle? To make the limit not dependent of the point~$a$ to which $x$~tends. Otherwise the limit would depend on the point~$a$.
+
+Note that for discontinuous functions elements of our set (our limit is a set) won't be infinitely small ``rectangles'' (as on the pictures), but would ``touch'' more than just one~$y$ value.
+
+The interesting thing here is that we can apply the above formula to \emph{every} function: for example to a discontinuous function, Dirichlet function, unbounded function, unbounded and discontinuous at every point function, etc. In short, the generalized limit is defined for \emph{every} function. We have a definition of limit for every function, not only a continuous function!
+
+And it works not only for real numbers. It would work for example for any function between two topological vector spaces (a vector space with a topology).
+
+Hurrah! Now we can define derivative and integral of \emph{every} function.
+
+\subsection{Formal}
+
+\fxwarning{The definition with or without~$\uparrow$?}
+\fxwarning{``Vertical'' set definitions.}
+
+In~\cite{volume-1-edition1} first defined generalized limit of
+a funcoid~$f$ to space~$\nu$ from a group~$G$ of ``translations'':
+
+\begin{defn}
+$\lim f=\setcond{\nu\circ f\circ\uparrow r}{r\in G}$.
+\end{defn}
+
+Limit of function (or more generally funcoid)~$f$ at filter~$\Delta$ is defined by the formula:
+
+\begin{defn}
+$\lim_{\Delta} f=\lim(f|_{\Delta})$.
+\end{defn}
+
+For example, limit of~$f:\mu\to\nu$ at point~$a$ is
+\[ \lim_{x\to a}f(x) = \lim_{\rsupfun{\mu}\{a\}}f. \]
+
+Generalzed limit can be further generalized to arbitrary spaces
+(ordered semigroup actions), but that is not yet thoroughly resaerched yet.
+
+I will call \emph{singularities} the set of generalized limits of the form $\xlim_{\supfun{\mu}\uparrow\{x\}}f$ where $f$~is an entirely defined funcoid and $x$~ranges all points of~$\Ob\mu$.
+
+Let $\operatorname{SNG}(R)$ is the set of singularities for
+a set~$R=\Ob\nu$ for some funcoid~$\nu$.
+
+\begin{defn}
+\emph{Supersingularities}
+\[
+\operatorname{SUPER}(R) =
+R\cup\operatorname{SNG}(R)\cup
+\operatorname{SNG}(\operatorname{SNG}(R))\cup\dots
+\]
+\end{defn}
+
+We can introduce the structure of a funcoid on supersingularities.
+
+Moreover, we can extend functions on~$\Ob\nu$ to the set
+$\operatorname{SUPER}(R)$. It preserves algebraic structures
+on~$R$: If $R$~is a group (ring, vector, space, etc.), then $\operatorname{SUPER}(R)$ is a group (ring, vector, space, etc.)
+
+Thus we can consider differential equations
+on~$\operatorname{SUPER}(R)$. That is differnetial equations
+whose solutions may take infinite values.
+
+It seems this may have applications, e.g. to blackholes.
+The author proposes the hypothesis that the center of a blackhole
+may contain an infinite quantity of information about its
+formation.
+
 \section{Other}
 
 My book~\cite{volume-1-edition1} also considers pointfree generalizations of funcoids,
 multidimensional generalizations of funcoids and reloids and other research topics.
-
-I also introduce generalized limit for arbitrary (not necessarily continuous) functions.
 
 My work introduced \emph{many} new conjectures. So I give you a work.
 
