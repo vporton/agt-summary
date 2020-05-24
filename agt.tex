@@ -50,6 +50,9 @@ denote $a\nasymp b$ when there is a non-least~$c$ such that $c\sqsubseteq a\land
 For a lattice with the least element we have
 \[ a\nasymp b \Leftrightarrow a\sqcap b\ne\bot. \]
 
+Atom of a poset is a minimal element of the set of non-least elements of this poset.
+I will denote $\atoms a$ the set of atoms under an element~$a$ of a poset.
+
 \section{Filters}
 
 We will consider \emph{filters} on a set~$\mho$ that is sets~$\mathfrak{F}$ of subsets of~$\mho$ such that
@@ -138,9 +141,28 @@ $\mathcal{X}\suprel{f}\mathcal{Y} \Leftrightarrow \mathcal{Y}\nasymp\supfun{f}\m
 
 We can define the funcoid~$\uparrow f$ corresponding to a binary relation~$f$ by the formula $\supfun{\uparrow f}\uparrow X=\uparrow\rsupfun{f}X$ for every set~$X$ on its source. (It can be proved that for every~$f$ there exists a unique~$\uparrow f$.) We call funcoids corresponding in this way to binary relations \emph{principal funcoids}.
 
+\begin{defn}
+A funcoid~$f$ is \emph{co-complete} when $\supfun{f}X$ is principal for every principal filter~$X$.
+\end{defn}
+
 The following are equivalent definitions of a \emph{complete} funcoid:
 
-??
+\begin{enumerate}
+\item $f^{-1}$ is co-complete.
+\item \label{cfcd:r-filt}$\forall S\in\subsets\mathscr{F}(\Src
+f),J\in\mathscr{T}(\Dst f):\left(\bigsqcup S\suprel
+fJ\Leftrightarrow\exists\mathcal{I}\in S:\mathcal{I}\suprel fJ\right)$;
+\item \label{cfcd:r-set}$\forall S\in\subsets\mathscr{T}(\Src f),J\in\mathscr{T}(\Dst
+f):\left(\bigsqcup S\rsuprel fJ\Leftrightarrow\exists I\in S:I\rsuprel
+fJ\right)$;
+\item \label{cfcd:f-filt}$\forall S\in\subsets\mathscr{F}(\Src f):\supfun
+f\bigsqcup S=\bigsqcup\rsupfun{\supfun f}S$;
+\item \label{cfcd:f-set}$\forall S\in\subsets\mathscr{T}(\Src f):\rsupfun
+f\bigsqcup S=\bigsqcup\rsupfun{\rsupfun f}S$;
+\item \label{cfcd:sing}$\forall A\in\mathscr{T}(\Src f):\rsupfun
+fA=\bigsqcup_{a\in\atoms A}\rsupfun fa$.
+\end{enumerate}
+
 
 \section{Reloids}
 
@@ -167,6 +189,29 @@ The sets of funcoids and reloids constitute complete atomistic co-brouwerian lat
 properties.
 
 There are interesting relationships between funcoids and reloids, as well as special classes of funcoids and reloids.
+
+\section{Products of filters}
+
+\section{Relationships between funcoids and reloids}
+
+\fxwarning{Define $\uparrow^{\mathsf{FCD}}$.
+(It is defined but $\mathsf{FCD}$ is forgotten.)}
+
+\index{funcoid!induced by reloid}Every reloid $f$ induces a funcoid
+$\tofcd f\in\mathsf{FCD}(\Src f,\Dst f)$ by the following formulas
+(for every $\mathcal{X}\in\mathscr{F}(\Src f)$, $\mathcal{Y}\in\mathscr{F}(\Dst f)$):
+\begin{gather*}
+\mathcal{X}\suprel{\tofcd f}\mathcal{Y}\Leftrightarrow\forall F\in\up f:\mathcal{X}\suprel{\uparrow^{\mathsf{FCD}}F}\mathcal{Y};\\
+\supfun{\tofcd f}\mathcal{X}=\bigsqcap_{F\in\up f}^{\mathscr{F}}\supfun{\uparrow^{\mathsf{FCD}}F}\mathcal{X}.
+\end{gather*}
+
+\index{reloid!inward}\index{reloid!outward}Every funcoid $f\in\mathsf{FCD}(A,B)$
+induces a reloid from $A$ to $B$ in two ways, intersection of \emph{outward}
+relations and union of \emph{inward} reloidal products of filters:
+\begin{gather*}
+\torldout f=\bigsqcap^{\mathsf{RLD}}\up f;\\
+\torldin f=\bigsqcup\setcond{\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}}{\mathcal{A}\in\mathscr{F}(A),\mathcal{B}\in\mathscr{F}(B),\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}\sqsubseteq f}.
+\end{gather*}
 
 \section{Continuity}
 
