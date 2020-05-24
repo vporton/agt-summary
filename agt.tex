@@ -81,13 +81,42 @@ Note that the set of principal filters is a subset of the set of filters on some
 
 \section{Funcoids}
 
-\begin{defn}
-A \emph{funcoid} $A\rightarrow B$ is a quadruple $(A,B,\alpha,\beta)$
-where~$\alpha$ and~$\beta$ are functions $\mathfrak{F}(A)\rightarrow \mathfrak{F}(B)$
-and $\mathfrak{F}(B)\rightarrow \mathfrak{F}(A)$ correspondingly, such that
-$\mathcal{Y} \sqcap \alpha(\mathcal{X}) \ne \bot \Leftrightarrow \mathcal{X} \sqcap \beta(\mathcal{Y}) \ne \bot$
-for every $\mathcal{X}\in\mathfrak{F}(A)$, $\mathcal{Y}\in\mathfrak{F}(B)$.
-\end{defn}
+I will reprise several equivalent definitions of funcoid from~\cite{volume-1-edition1}:
+
+Binary relation $\delta$ between two sets (source and destination of the funcoid), conforming to the axioms:
+
+\begin{enumerate}
+\item not $\emptyset\mathrel{\delta}X$
+\item not $X\mathrel{\delta}\emptyset$
+\item $I\cup J \mathrel{\delta} K\Leftrightarrow I \mathrel{\delta}K\wedge J\mathrel{\delta}K$
+\item $K\mathrel{\delta}I\cup J\Leftrightarrow K \mathrel{\delta}I\wedge K\mathrel{\delta}J$
+\end{enumerate}
+
+Pair of functions $(\alpha,\beta)$ between the sets of filters filters on some two sets (source and destination of the funcoid), conforming to the formula:
+\[ \alpha (\mathcal{X})\sqcap \mathcal{Y}\neq \bot \Leftrightarrow \beta (\mathcal{Y})\sqcap \mathcal{X}\neq \bot. \]
+
+\begin{rem}
+Funcoid~$(\alpha,\beta)$ is determined by the value of~$\alpha$ (or value of~$\beta$).
+\end{rem}
+
+A function $\Delta$ from the set of subsets of some set (source of the funcoid) to the set of filters on some set (destination of the funcoid), conforming to the axioms:
+
+\begin{enumerate}
+\item $\Delta (\emptyset)=\bot$
+\item $\Delta (X\sqcup Y)=\Delta (X)\sqcup \Delta (Y)$
+\end{enumerate}
+
+(Here~$\sqcup$ and~$\sqcap$ are the join and the meet correspondingly on the lattice of filters with order reverse to set-theoretic inclusion, $\bot$~is the improper filter.)
+
+Note that we define things to have the equations:
+\begin{enumerate}
+\item
+\begin{multline*}
+X\rsuprel{f}Y \Leftrightarrow X\mathrel{\delta}Y \Leftrightarrow \\ \uparrow X\suprel{(\alpha,\beta)}\uparrow Y \Leftrightarrow
+\alpha (X)\sqcap Y\neq \bot \Leftrightarrow \\ \beta (Y)\sqcap X\neq \bot
+\end{multline*}
+\item $\rsupfun{f}X = \Delta X = \alpha\uparrow X$
+\end{enumerate}
 
 \begin{defn}
 I denote $(A,B,\alpha,\beta)^{-1} = (B,A,\beta,\alpha)$.
