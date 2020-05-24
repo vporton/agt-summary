@@ -183,17 +183,17 @@ The following are equivalent definitions of a \emph{complete} funcoid:
 
 \begin{enumerate}
 \item $f^{-1}$ is co-complete.
-\item \label{cfcd:r-filt}$\forall S\in\subsets\mathscr{F}(\Src
-f),J\in\mathscr{T}(\Dst f):\left(\bigsqcup S\suprel
+\item \label{cfcd:r-filt}$\forall S\in\subsets\mathfrak{F}(\Src
+f),J\in\subsets(\Dst f):\left(\bigsqcup S\suprel
 fJ\Leftrightarrow\exists\mathcal{I}\in S:\mathcal{I}\suprel fJ\right)$;
-\item \label{cfcd:r-set}$\forall S\in\subsets\mathscr{T}(\Src f),J\in\mathscr{T}(\Dst
-f):\left(\bigsqcup S\rsuprel fJ\Leftrightarrow\exists I\in S:I\rsuprel
+\item \label{cfcd:r-set}$\forall S\in\subsets\subsets(\Src f),J\in\subsets(\Dst
+f):\left(\bigcup S\rsuprel fJ\Leftrightarrow\exists I\in S:I\rsuprel
 fJ\right)$;
-\item \label{cfcd:f-filt}$\forall S\in\subsets\mathscr{F}(\Src f):\supfun
-f\bigsqcup S=\bigsqcup\rsupfun{\supfun f}S$;
-\item \label{cfcd:f-set}$\forall S\in\subsets\mathscr{T}(\Src f):\rsupfun
+\item \label{cfcd:f-filt}$\forall S\in\subsets\mathfrak{F}(\Src f):\supfun
+f\bigcup S=\bigsqcup\rsupfun{\supfun f}S$;
+\item \label{cfcd:f-set}$\forall S\in\subsets\subsets(\Src f):\rsupfun
 f\bigsqcup S=\bigsqcup\rsupfun{\rsupfun f}S$;
-\item \label{cfcd:sing}$\forall A\in\mathscr{T}(\Src f):\rsupfun
+\item \label{cfcd:sing}$\forall A\in\subsets(\Src f):\rsupfun
 fA=\bigsqcup_{a\in\atoms A}\rsupfun fa$.
 \end{enumerate}
 
@@ -261,10 +261,10 @@ and
 
 \index{funcoid!induced by reloid}Every reloid $f$ induces a funcoid
 $\tofcd f\in\mathsf{FCD}(\Src f,\Dst f)$ by the following formulas
-(for every $\mathcal{X}\in\mathscr{F}(\Src f)$, $\mathcal{Y}\in\mathscr{F}(\Dst f)$):
+(for every $\mathcal{X}\in\mathfrak{F}(\Src f)$, $\mathcal{Y}\in\mathfrak{F}(\Dst f)$):
 \begin{gather*}
 \mathcal{X}\suprel{\tofcd f}\mathcal{Y}\Leftrightarrow\forall F\in\up f:\mathcal{X}\suprel{\uparrow^{\mathsf{FCD}}F}\mathcal{Y};\\
-\supfun{\tofcd f}\mathcal{X}=\bigsqcap_{F\in\up f}^{\mathscr{F}}\supfun{\uparrow^{\mathsf{FCD}}F}\mathcal{X}.
+\supfun{\tofcd f}\mathcal{X}=\bigsqcap_{F\in\up f}^{\mathfrak{F}}\supfun{\uparrow^{\mathsf{FCD}}F}\mathcal{X}.
 \end{gather*}
 
 \index{reloid!inward}\index{reloid!outward}Every funcoid $f\in\mathsf{FCD}(A,B)$
@@ -272,7 +272,7 @@ induces a reloid from $A$ to $B$ in two ways, intersection of \emph{outward}
 relations and union of \emph{inward} reloidal products of filters:
 \begin{gather*}
 \torldout f=\bigsqcap^{\mathsf{RLD}}\up f;\\
-\torldin f=\bigsqcup\setcond{\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}}{\mathcal{A}\in\mathscr{F}(A),\mathcal{B}\in\mathscr{F}(B),\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}\sqsubseteq f}.
+\torldin f=\bigsqcup\setcond{\mathcal{A}\times^{\mathsf{RLD}}\mathcal{B}}{\mathcal{A}\in\mathfrak{F}(A),\mathcal{B}\in\mathfrak{F}(B),\mathcal{A}\times^{\mathsf{FCD}}\mathcal{B}\sqsubseteq f}.
 \end{gather*}
 
 \section{Continuity}
