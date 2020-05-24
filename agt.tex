@@ -46,6 +46,10 @@ I denote the least and greatest elements (if they exist) of our poset as~$\bot$ 
 
 \section{Filters}
 
+We will consider \emph{filters} on a set~$\mho$ that is sets~$\mathfrak{F}$ of subsets of~$\mho$ such that
+\[ \forall X,Y\in\subsets\mho:
+(X,Y\in\mathcal{F} \Leftrightarrow X\cap Y\in\mathcal{F}). \]
+
 \begin{defn}
 I order the set~$\mathfrak{F}$ of filters (including the improper filter) \emph{reverse} to set-theoretic order, that is
 $\mathcal{A} \sqsubseteq \mathcal{B} \Leftrightarrow \mathcal{A} \supseteq \mathcal{B}$
@@ -57,6 +61,8 @@ This makes the set of filters on a set into a co-brouwerian (and thus distributi
 $\mathcal{A} \sqcup \bigsqcap S = \bigsqcap_{\mathcal{X}\in S} (\mathcal{A} \sqcup \mathcal{X})$
 for a set~$S$ of filters and a filter~$\mathcal{A}$.
 \end{prop}
+
+Wee denote $\uparrow A$ the pricnipal filter corresponding to a set~$A$ that is the filter $\setcond{X\in\subsets\mho}{X\supseteq A}$.
 
 \section{Funcoids}
 
@@ -117,6 +123,8 @@ There are also several other equivalent ways to define funcoids.
 Funcoids are made more interesting than topological spaces by a new operation (missing in traditional general topology),
 \emph{composition}, which is defined by the formula
 \[ (B,C,\alpha_2,\beta_2)\circ (A,B,\alpha_1,\beta_1) = (A,C,\alpha_2\circ\alpha_1,\beta_1\circ\beta_2). \]
+
+We can define the funcoid~$\uparrow f$ corresponding to a binary relation~$f$ by the formula $\supfun{\uparrow f}\uparrow X=\uparrow\rsupfun{f}X$ for every set~$X$ on its source. (It can be proved that for every~$f$ there exists a unique~$\uparrow f$.) We call funcoids corresponding in this way to binary relations \emph{principal funcoids}.
 
 \section{Reloids}
 
