@@ -39,7 +39,7 @@ Also I discovered~(\cite{volume-1-edition1} and~\cite{limit}) a definition of a 
 
 \section{Conventions}
 
-Because you always can refer to my book, in this short intro I present theorems without proofs.
+Because you always can refer to my books, in this short intro I present theorems without proofs.
 
 I denote order on a poset as~$\sqsubseteq$ and corresponding lattice operations as~$\bigsqcup$ and~$\bigsqcap$.
 I denote the least and greatest elements (if they exist) of our poset as~$\bot$ and~$\top$ correspondingly.
@@ -61,10 +61,12 @@ We will consider \emph{filters} on a set~$\mho$ (denote $\mathfrak{F}(\mho)$) th
 
 I will denote $\Base(\mathcal{F})=\mho$.
 
+Note that $\subsets\mho$ (\emph{improper filter}) is also considered a filter by me.
+
 Filters are a generalization of sets, allowing to express such things as the infinitely small neighbourhood of zero on the real line: \[ \setcond{X\in\subsets\mathbb{R}}{\exists\epsilon>0:X\supseteq\left]\epsilon;\epsilon\right[}. \]
 
 \begin{defn}
-I order the set~$\mathfrak{F}$ of filters (including the improper filter) \emph{reverse} to set-theoretic order, that is
+I order the set~$\mathfrak{F}$ of filters \emph{reverse} to set-theoretic order, that is
 $\mathcal{A} \sqsubseteq \mathcal{B} \Leftrightarrow \mathcal{A} \supseteq \mathcal{B}$
 for $\mathcal{A},\mathcal{B}\in\mathfrak{F}$.
 \end{defn}
@@ -77,7 +79,7 @@ for a set~$S$ of filters and a filter~$\mathcal{A}$.
 
 We denote $\uparrow A$ the principal filter corresponding to a set~$A$ that is the filter $\setcond{X\in\subsets\mho}{X\supseteq A}$.
 
-Note that the set of principal filters is a subset of the set of filters on some set. This suggests the idea of filtrators: A \emph{filtrator} is a pair of a poset and its subset. Filtrators were first studied by me in~\cite{filters} and \cite{volume-1-edition1} contains a more detailed reference on filtrators.
+Note that the set of principal filters is a subset of the set of filters on some set. This suggests the idea of filtrators: A \emph{filtrator} is a pair of a poset and its subset. Filters are a special case of elements of filtrators. Filtrators were first studied by me in~\cite{filters} and \cite{volume-1-edition1} contains a more detailed reference on filtrators.
 
 Atomic filters are traditionally called \emph{ultrafilters}.
 
@@ -163,21 +165,15 @@ determined by values of the function~$\langle f\rangle$ on principal filters or
 by the relation~$[f]$ between principal filters.
 \end{prop}
 
-See my book for formulas for \emph{principal funcoids} that is funcoids corresponding to binary relations
-and for funcoids corresponding to pretopologies and preclosures (particularly funcoids corresponding to
-topological spaces, as topological spaces can be considered as a special case of either pretopologies or preclosures).
-
 There are also several other equivalent ways to define funcoids.
 
 Funcoids are made more interesting than topological spaces by a new operation (missing in traditional general topology),
 \emph{composition}, which is defined by the formula
 \[ (B,C,\alpha_2,\beta_2)\circ (A,B,\alpha_1,\beta_1) = (A,C,\alpha_2\circ\alpha_1,\beta_1\circ\beta_2). \]
 
-\begin{defn}
-$\mathcal{X}\suprel{f}\mathcal{Y} \Leftrightarrow \mathcal{Y}\nasymp\supfun{f}\mathcal{X}$.
-\end{defn}
-
-A funcoid~$f$ is uniquely determined by~$\supfun{f}$ and moreover by the values of~$\supfun{f}$ on principal filters or by values of~$\supfun{f}$ on ultrafilters.
+\begin{prop}
+A funcoid~$f$ is uniquely determined by~$\supfun{f}$ and moreover by values of~$\supfun{f}$ on ultrafilters or by the relation~$\suprel{f}$ between ultrafilters.
+\end{prop}
 
 We can define the funcoid~$\uparrow^{\mathsf{FCD}} f$ corresponding to a binary relation~$f$ by the formula $\supfun{\uparrow^{\mathsf{FCD}} f}\uparrow X=\uparrow\rsupfun{f}X$ for every set~$X$ on its source. (It can be proved that for every~$f$ there exists a unique~$\uparrow^{\mathsf{FCD}} f$.) We call funcoids corresponding in this way to binary relations \emph{principal funcoids}.
 
@@ -512,10 +508,10 @@ $\operatorname{SUPER}(R)$. It preserves algebraic structures
 on~$R$: If $R$~is a group (ring, vector, space, etc.), then $\operatorname{SUPER}(R)$ is a group (ring, vector, space, etc.)
 
 Thus we can consider differential equations
-on~$\operatorname{SUPER}(R)$. That is differnetial equations
+on~$\operatorname{SUPER}(R)$. That is differential equations
 whose solutions may take infinite values.
 
-It seems this may have applications, e.g. to blackholes.
+It seems this may have applications, e.g.\ to blackholes.
 The author proposes the hypothesis that the center of a blackhole
 may contain an infinite quantity of information about its
 formation.
