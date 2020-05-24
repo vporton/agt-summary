@@ -44,11 +44,19 @@ Because you always can refer to my book, in this short intro I present theorems 
 I denote order on a poset as~$\sqsubseteq$ and corresponding lattice operations as~$\bigsqcup$ and~$\bigsqcap$.
 I denote the least and greatest elements (if they exist) of our poset as~$\bot$ and~$\top$ correspondingly.
 
+I call elements~$a$ and~$b$ of a poset \emph{intersecting} and
+denote $a\nasymp b$ when there is a non-least~$c$ such that $c\sqsubseteq a\land c\sqsubseteq b$.
+
+For a lattice with the least element we have
+\[ a\nasymp b \Leftrightarrow a\sqcap b\ne\bot. \]
+
 \section{Filters}
 
 We will consider \emph{filters} on a set~$\mho$ that is sets~$\mathfrak{F}$ of subsets of~$\mho$ such that
 \[ \forall X,Y\in\subsets\mho:
 (X,Y\in\mathcal{F} \Leftrightarrow X\cap Y\in\mathcal{F}). \]
+
+Filters are a generalization of sets, allowing to express such things as the infinitely small neighbourhood of zero on the real line: $\setcond{X\in\subsets\mathbb{R}}{\exists\epsilon>0:X\supseteq\left]\epsilon;\epsilon\right[}$.
 
 \begin{defn}
 I order the set~$\mathfrak{F}$ of filters (including the improper filter) \emph{reverse} to set-theoretic order, that is
@@ -124,7 +132,15 @@ Funcoids are made more interesting than topological spaces by a new operation (m
 \emph{composition}, which is defined by the formula
 \[ (B,C,\alpha_2,\beta_2)\circ (A,B,\alpha_1,\beta_1) = (A,C,\alpha_2\circ\alpha_1,\beta_1\circ\beta_2). \]
 
+\begin{defn}
+$\mathcal{X}\suprel{f}\mathcal{Y} \Leftrightarrow \mathcal{Y}\nasymp\supfun{f}\mathcal{X}$.
+\end{defn}
+
 We can define the funcoid~$\uparrow f$ corresponding to a binary relation~$f$ by the formula $\supfun{\uparrow f}\uparrow X=\uparrow\rsupfun{f}X$ for every set~$X$ on its source. (It can be proved that for every~$f$ there exists a unique~$\uparrow f$.) We call funcoids corresponding in this way to binary relations \emph{principal funcoids}.
+
+The following are equivalent definitions of a \emph{complete} funcoid:
+
+??
 
 \section{Reloids}
 
