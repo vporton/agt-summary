@@ -19,6 +19,8 @@
 
 \title[Algebraic General Topology]{Algebraic General Topology summary}
 
+\subjclass[2010]{06F05, 06F99, 08A99, 20M30, 20M99, 54J05, 54A05, 54D99, 54E05, 54E15, 54E17, 54E99, 51F99, 54E25, 30L99, 54E35}
+
 \maketitle
 
 In my book~\cite{volume-1-edition1} published by INFRA-M (with almost no artiles interim) I introduce some new concepts
@@ -98,11 +100,11 @@ Binary relation $\delta$ between two sets (source and destination of the funcoid
 
 (I will denote the source of a funcoid~$f$ as~$\Src f$ and its destination as~$\Dst f$.)
 
-Pair of functions $(\alpha,\beta)$ between the sets of filters filters on some two sets (source and destination of the funcoid), conforming to the formula:
+Quadruple $(A,B,\alpha,\beta)$ of sets~$A$,~$B$ (source and destination of the funcoid) and functions $\alpha:\mathfrak{F}(A)\to\mathfrak{F}(B)$,~$\beta:\mathfrak{F}(B)\to\mathfrak{F}(A)$, conforming to the formula:
 \[ \alpha (\mathcal{X})\sqcap \mathcal{Y}\neq \bot \Leftrightarrow \beta (\mathcal{Y})\sqcap \mathcal{X}\neq \bot. \]
 
 \begin{rem}
-Funcoid~$(\alpha,\beta)$ is determined by the value of~$\alpha$ (or value of~$\beta$).
+Funcoid~$(A,B,\alpha,\beta)$ is determined by the value of~$\alpha$ (or value of~$\beta$).
 \end{rem}
 
 A function $\Delta$ from the set of subsets of some set (source of the funcoid) to the set of filters on some set (destination of the funcoid), conforming to the axioms:
@@ -143,6 +145,8 @@ Funcoids generalize such things as:
 \item pretopologies;
 \item preclosures.
 \end{itemize}
+
+I remind that proximities are an axiomatization of the relation of ``nearness'' (informally, being at zero distance) of two sets.
 
 For a proximity~$\delta$, define
 \[ \mathcal{X}\mathrel{\delta'}\mathcal{Y} \Leftrightarrow \forall X\in\mathcal{X},Y\in\mathcal{Y}: X\mathrel{\delta}Y \]
@@ -192,9 +196,9 @@ fJ\Leftrightarrow\exists\mathcal{I}\in S:\mathcal{I}\suprel fJ\right)$;
 f):\left(\bigcup S\rsuprel fJ\Leftrightarrow\exists I\in S:I\rsuprel
 fJ\right)$;
 \item \label{cfcd:f-filt}$\forall S\in\subsets\mathfrak{F}(\Src f):\supfun
-f\bigcup S=\bigsqcup\rsupfun{\supfun f}S$;
+f\bigsqcup S=\bigsqcup\rsupfun{\supfun f}S$;
 \item \label{cfcd:f-set}$\forall S\in\subsets\subsets(\Src f):\rsupfun
-f\bigsqcup S=\bigsqcup\rsupfun{\rsupfun f}S$;
+f\bigcup S=\bigsqcup\rsupfun{\rsupfun f}S$;
 \item \label{cfcd:sing}$\forall A\in\subsets(\Src f):\rsupfun
 fA=\bigsqcup_{a\in\atoms A}\rsupfun fa$.
 \end{enumerate}
@@ -352,10 +356,7 @@ Google search for both ``ordered semigroup action'' and ``action of ordered semi
 Essentially, an ordered semigroup action is an ordered precategory action with just one object.
 
 The interesting thing here is that every kind of a space
-(topological space, uniforms space or reloid, proximity space
-of funcoid, metric space) is representable as an element of
-an ordered semigroup action. Both spaces and binary relations
-(including functions) are interspaces.
+(topological space, (quasi)uniforms space or reloid, (quasi)proximity space of funcoid, (quasi)metric space) is representable as an element of an ordered semigroup action. Both spaces and binary relations (including functions) are interspaces.
 
 All topological properties can be described in terms of
 ordered actions of semigroups or more generally ordered actions of precategories.
@@ -454,9 +455,9 @@ So we have a formula for \emph{generalized limit}:
 \{ \nu \circ f|_{\Delta(a)} \circ r \mid r\in G \} \]
 where~$G$ is the group of all horizontal shifts of our space~$\mathbb{R}$, $f|_{\Delta(a)}$ is the function~$f$ of which we are taking limit restricted to the infinitely small interval~$\Delta(a)$ around the point~$a$, $\nu\circ{}$~is ``stretching'' our function graph into the infinitely thin ``strip'' by applying a topological operation to it.
 
-What all this (especially ``infinitely small'') means? It is filters and ``funcoids''.
+What all this (especially ``infinitely small'') means? It is filters and funcoids.
 
-Why we consider all shifts of our infinitely small rectangle? To make the limit not dependent of the point~$a$ to which $x$~tends. Otherwise the limit would depend on the point~$a$.
+Why do we consider all shifts of our infinitely small rectangle? To make the limit not dependent of the point~$a$ to which $x$~tends. Otherwise the limit would depend on the point~$a$.
 
 Note that for discontinuous functions elements of our set (our limit is a set) won't be infinitely small ``rectangles'' (as on the pictures), but would ``touch'' more than just one~$y$ value.
 
@@ -485,11 +486,11 @@ For example, limit of~$f:\mu\to\nu$ at point~$a$ is
 \[ \lim_{x\to a}f(x) = \lim_{\rsupfun{\mu}\{a\}}f. \]
 
 Generalzed limit can be further generalized to arbitrary spaces
-(ordered semigroup actions), but that is not yet thoroughly resaerched yet.
+(ordered semigroup actions), but that is not yet thoroughly researched yet.
 
 I will call \emph{singularities} the set of generalized limits of the form $\xlim_{\supfun{\mu}\uparrow\{x\}}f$ where $f$~is an entirely defined funcoid and $x$~ranges all points of~$\Ob\mu$.
 
-Let $\operatorname{SNG}(R)$ is the set of singularities for
+Let $\operatorname{SNG}(R)$ be the set of singularities for
 a set~$R=\Ob\nu$ for some funcoid~$\nu$.
 
 \begin{defn}
@@ -518,7 +519,7 @@ formation.
 
 \section{Other}
 
-My book~\cite{volume-1-edition1} also considers pointfree generalizations of funcoids,
+My book~\cite{volume-1-edition1} also considers more topological properties of funcoids and reloids, pointfree generalizations of funcoids,
 multidimensional generalizations of funcoids and reloids and other research topics.
 
 My work introduced \emph{many} new conjectures. So I give you a work.
